@@ -55,15 +55,15 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON ADMINISTRADOR ---------------------------
 	
 	/**
-	 * Método el cual agrega un administrador se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega un administrador se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	public void agregarAdministrador() {
 		
 		Administrador admin = new Administrador();
-		admin.setNombre("Andrés");
-		admin.setApellido("López");
+		admin.setNombre("Andrï¿½s");
+		admin.setApellido("Lï¿½pez");
 		admin.setDireccion("Isabela");
 		admin.setId("7843");
 		admin.setEmail("andresL@gamil.com");
@@ -76,14 +76,14 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de un administrador se usa el entityManager.persist(), entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de un administrador se usa el entityManager.persist(), entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	public void modificarAdministrador() {
 		
 		Administrador admin = new Administrador();
-		admin.setNombre("Andres");
+		admin.setNombre("Andrea");
 		admin.setApellido("Gutierrez");
 		admin.setDireccion("Calle #6");
 		admin.setId("9823");
@@ -104,15 +104,15 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina un administrador se usa el entityManager.persist(), entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina un administrador se usa el entityManager.persist(), entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
 	public void eliminarAdministrador() {
 		
 		Administrador admin = new Administrador();
-		admin.setNombre("Andrés");
-		admin.setApellido("López");
+		admin.setNombre("Andrï¿½s");
+		admin.setApellido("Lï¿½pez");
 		admin.setDireccion("Isabela");
 		admin.setId("7843");
 		admin.setEmail("andresL@gamil.com");
@@ -131,7 +131,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON USUARIO ---------------------------
 	
 	/**
-	 * Método el cual agrega un usuario se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega un usuario se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -152,7 +152,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de un usuario se usa el entityManager.persist(), entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de un usuario se usa el entityManager.persist(), entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -180,7 +180,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina un usuario se usa el entityManager.persist(), entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina un usuario se usa el entityManager.persist(), entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@Transactional(value = TransactionMode.ROLLBACK)
@@ -207,7 +207,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON PERSONA.JSON ---------------------------
 	
 	/**
-	 * Método el cual agrega una persona se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega una persona se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@UsingDataSet({"Persona.json"})
@@ -216,7 +216,7 @@ public class ModeloT {
 
 		Persona p = new Persona();
 		p.setNombre("Juliana");
-		p.setApellido("Castañeda");
+		p.setApellido("Castaï¿½eda");
 		p.setEmail("julianaC@gmail.com");
 		p.setDireccion("Calle 3");
 		p.setId("7623");
@@ -228,7 +228,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina una persona se usa el entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina una persona se usa el entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@UsingDataSet({"Persona.json"})
@@ -243,7 +243,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de una persona se usa el entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de una persona se usa el entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@UsingDataSet({"Persona.json"})
@@ -261,7 +261,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todas las personas que están registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todas las personas que estï¿½n registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"Persona.json"})
@@ -277,7 +277,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON PRODUCTO.JSON ---------------------------
 	
 	/**
-	 * Método el cual agrega un producto se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega un producto se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json"})
@@ -305,7 +305,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina un producto se usa el entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina un producto se usa el entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json"})
@@ -321,7 +321,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de un producto se usa el entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de un producto se usa el entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json"})
@@ -339,7 +339,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todas los productos que están registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todas los productos que estï¿½n registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json"})
@@ -353,7 +353,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todas los productos que están registrados como disponibles == true en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todas los productos que estï¿½n registrados como disponibles == true en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json"})
@@ -370,7 +370,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON COMPRA.JSON ---------------------------
 	
 	/**
-	 * Método el cual agrega una compra se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega una compra se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json", "Compra.json"})
@@ -395,7 +395,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina una compra se usa el entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina una compra se usa el entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json", "Compra.json"})
@@ -411,7 +411,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de una compra se usa el entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de una compra se usa el entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json", "Compra.json"})
@@ -429,7 +429,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todas las compras que están registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todas las compras que estï¿½n registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"Producto.json", "Compra.json"})
@@ -445,7 +445,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON CALIFICACIONES.JSON ---------------------------
 	
 	/**
-	 * Método el cual agrega una calificación se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega una calificaciï¿½n se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@UsingDataSet({"Calificaciones.json", "Persona.json", "Producto.json"})
@@ -470,7 +470,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de una calificación se usa el entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de una calificaciï¿½n se usa el entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@UsingDataSet({"Calificaciones.json", "Persona.json", "Producto.json"})
@@ -488,7 +488,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina una calificación se usa el entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina una calificaciï¿½n se usa el entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@UsingDataSet({"Calificaciones.json", "Persona.json", "Producto.json"})
@@ -504,7 +504,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todas las calificacions que están registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todas las calificacions que estï¿½n registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"Calificaciones.json", "Persona.json", "Producto.json"})
@@ -520,7 +520,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON COMENTARIO.JSON ---------------------------
 	
 	/**
-	 * Método el cual agrega un comentario se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega un comentario se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@UsingDataSet({"Comentario.json", "Persona.json", "Producto.json"})
@@ -541,7 +541,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de un comentario se usa el entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de un comentario se usa el entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@UsingDataSet({"Comentario.json", "Persona.json", "Producto.json"})
@@ -559,7 +559,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina un comentario se usa el entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina un comentario se usa el entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@UsingDataSet({"Comentario.json", "Persona.json", "Producto.json"})
@@ -575,7 +575,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todas los comentarios que están registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todas los comentarios que estï¿½n registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"Comentario.json", "Persona.json", "Producto.json"})
@@ -591,7 +591,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON FAVORITOS.JSON ---------------------------
 	
 	/**
-	 * Método el cual agrega favoritos se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega favoritos se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@UsingDataSet({"Favoritos.json", "Persona.json", "Producto.json"})
@@ -615,7 +615,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo de favoritos se usa el entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo de favoritos se usa el entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@UsingDataSet({"Favoritos.json", "Persona.json", "Producto.json"})
@@ -636,7 +636,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina favoritos se usa el entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina favoritos se usa el entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@UsingDataSet({"Favoritos.json", "Persona.json", "Producto.json"})
@@ -652,7 +652,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todas los productos favoritos que están registrados en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todas los productos favoritos que estï¿½n registrados en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"Favoritos.json", "Persona.json", "Producto.json"})
@@ -668,7 +668,7 @@ public class ModeloT {
 	// --------------------------- PRUEBAS CON DETALLESCOMPRAS.JSON ---------------------------
 	
 	/**
-	 * Método el cual agrega detalles de compra se usa el entityManager.persist() y entityManager.find()
+	 * Mï¿½todo el cual agrega detalles de compra se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
 	@UsingDataSet({"DetallesCompras.json", "Producto.json", "Compra.json"})
@@ -695,7 +695,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual modifica algún atributo del detalle de una compra se usa el entityManager.find() y entityManager.merge()
+	 * Mï¿½todo el cual modifica algï¿½n atributo del detalle de una compra se usa el entityManager.find() y entityManager.merge()
 	 */
 	@Test
 	@UsingDataSet({"DetallesCompras.json", "Producto.json", "Compra.json"})
@@ -713,7 +713,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual elimina el detalle de una compra se usa el entityManager.find() y entityManager.remove()
+	 * Mï¿½todo el cual elimina el detalle de una compra se usa el entityManager.find() y entityManager.remove()
 	 */
 	@Test
 	@UsingDataSet({"DetallesCompras.json", "Producto.json", "Compra.json"})
@@ -729,7 +729,7 @@ public class ModeloT {
 	}
 	
 	/**
-	 * Método el cual lista todos los detalles de las compras que están registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
+	 * Mï¿½todo el cual lista todos los detalles de las compras que estï¿½n registradas en la base de datos se usa entityManager.createNamedQuery) y .getResultList()
 	 */
 	@Test
 	@UsingDataSet({"DetallesCompras.json", "Producto.json", "Compra.json"})
