@@ -1,0 +1,37 @@
+{
+	"productos": [
+		{
+		  "ID_PRODUCTO" : 1,
+		  "DESCRIPCION" : "televisor de 30', pantalla plana",
+		  "DISPONIBILIDAD" : 0,
+		  "FECHALIMITE":"2019-04-12",
+		  "IMAGEN" : "[NULL]",
+		  "NOMBRE" : "TELEVISOR SMART TV LG",
+		  "PRECIO" : 1000000,
+		  "TIPOPRODUCTO" : "TECNOLOGIA",
+		  "USUARIO_ID" : "456"
+		},
+		{
+		  "ID_PRODUCTO" :2,
+		  "DESCRIPCION" : "Celular ",
+		  "DISPONIBILIDAD" : 1,
+		  "FECHALIMITE": "2019-05-24",
+		  "IMAGEN" : "[NULL]",
+		  "NOMBRE" : "Celular Iphone 10",
+		  "PRECIO" : 2800000,
+		  "TIPOPRODUCTO" : "TECNOLOGIA",
+		  "USUARIO_ID" : "443"
+		},
+		{
+		  "ID_PRODUCTO" : 3,
+		  "DESCRIPCION" : "blusa manga sisa color negra, xs",
+		  "DISPONIBILIDAD" : 1,
+		  "FECHALIMITE":"2020-09-12",
+		  "IMAGEN" : "[NULL]",
+		  "NOMBRE" : "blusa ELA",
+		  "PRECIO" : 78000,
+		  "TIPOPRODUCTO" : "MODA",
+		  "USUARIO_ID" : "987"
+		}
+	]
+}

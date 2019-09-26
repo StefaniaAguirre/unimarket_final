@@ -1,0 +1,19 @@
+{
+	"comentarios": [
+		{
+			"ID_COMENTARIO": 1,
+			"COMENTARIO": "Pesimo",
+			"PRODUCTO_ID_PRODUCTO": 1
+		},
+		{
+			"ID_COMENTARIO": 2,
+			"COMENTARIO": "Bueno",
+			"PRODUCTO_ID_PRODUCTO": 2
+		},
+		{
+			"ID_COMENTARIO": 3,
+			"COMENTARIO": "Pesimo",
+			"PRODUCTO_ID_PRODUCTO": 3
+		}
+	]
+}

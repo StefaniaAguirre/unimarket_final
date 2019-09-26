@@ -1,0 +1,19 @@
+{
+	"favoritos": [
+		{
+		     "ID_FAVORITO": 1,
+		     "PRODUCTO_ID_PRODUCTO" : 1,
+		     "USUARIO_ID" : "456"
+		},
+		{
+		     "ID_FAVORITO": 2,
+		     "PRODUCTO_ID_PRODUCTO" : 2,
+		     "USUARIO_ID" : "443"
+		},
+		{
+		     "ID_FAVORITO": 3,
+		     "PRODUCTO_ID_PRODUCTO" : 3,
+		     "USUARIO_ID" : "987"
+		}
+	]
+}

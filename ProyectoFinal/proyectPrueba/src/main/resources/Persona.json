@@ -1,0 +1,56 @@
+{
+	"personas": [
+		{
+			"ID": "123",
+			"DTYPE": "Administrador",
+			"APELLIDO": "Torres",
+			"DIRECCION": "Calle #3",
+			"EMAIL": "anaT@gmail.com",
+			"NOMBRE": "Ana",
+			"PASSWORD": "123",
+			"TELEFONO": "7376213",
+			"ADMINISTRADOR_ID": "234",
+			"USUARIO_ID": "345",
+			"ROL": "[NULL]"
+		},
+		{
+			"ID": "213",
+			"DTYPE": "Usuario",
+			"APELLIDO": "Arias",
+			"DIRECCION": "Calle #5",
+			"EMAIL": "carlosA@gmail.com",
+			"NOMBRE": "Carlos",
+			"PASSWORD": "213",
+			"TELEFONO": "7336516",
+			"ADMINISTRADOR_ID": "678",
+			"USUARIO_ID": "456",
+			"ROL": "VENDEDOR"
+		},
+		{
+			"ID": "321",
+			"DTYPE": "Usuario",
+			"APELLIDO": "Fuentes",
+			"DIRECCION": "Calle #25",
+			"EMAIL": "juanF@gmail.com",
+			"NOMBRE": "Juan",
+			"PASSWORD": "321",
+			"TELEFONO": "3115435673",
+			"ADMINISTRADOR_ID": "543",
+			"USUARIO_ID": "443",
+			"ROL": "COMPRADOR"
+		},
+		{
+		   "ID": "987",  
+		   "DTYPE" : "Usuario",
+		   "APELLIDO" : "Londoo",
+		   "DIRECCION" : "Barrio Laureles, calle 62 # 51-27",
+		   "EMAIL" : "lorenaLopez@gmail.com",
+		   "NOMBRE" : "Camilo",
+		   "PASSWORD" : "987",
+		   "TELEFONO" : "3207253128",
+		   "ADMINISTRADOR_ID" : "1209",
+		   "USUARIO_ID" : "825",
+		   "ROL" : "COMPRADOR"
+		}
+	]
+}

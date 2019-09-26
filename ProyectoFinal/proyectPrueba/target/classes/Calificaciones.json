@@ -1,0 +1,22 @@
+{	
+	"calificaciones": [
+		{ 
+			"ID_CALIFICACION" : 987,
+		  	"CALIFICACION" :3,
+		  	"PRODUCTO_ID_PRODUCTO" : 1,
+		  	"USUARIO_ID" : "456"
+		},
+		{ 
+			"ID_CALIFICACION" : 986,
+		  	"CALIFICACION" :4,
+		  	"PRODUCTO_ID_PRODUCTO" : 2,
+		  	"USUARIO_ID" : "443"
+		},
+		{ 
+			"ID_CALIFICACION" : 985,
+		  	"CALIFICACION" :5,
+		  	"PRODUCTO_ID_PRODUCTO" : 3,
+		  	"USUARIO_ID" : "987"
+		}
+	]
+}

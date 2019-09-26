@@ -1,0 +1,22 @@
+{
+	"compras": [
+		{
+		  "ID_COMPRA" : 103,
+		  "FECHA_COMPRA" : "2019-12-19",
+		  "METODO_PAGO" : "TARJETA_CREDITO",
+		  "PRODUCTO_ID_PRODUCTO" : 3
+		},
+		{
+		  "ID_COMPRA" : 102,
+		  "FECHA_COMPRA" : "2019-12-20",
+		  "METODO_PAGO" : "EFECTIVO",
+		  "PRODUCTO_ID_PRODUCTO" : 2
+		},
+		{
+		  "ID_COMPRA" : 101,
+		  "FECHA_COMPRA" : "2019-12-12",
+		  "METODO_PAGO" : "EFECTIVO",
+		  "PRODUCTO_ID_PRODUCTO" : 1
+		}
+	]
+}
