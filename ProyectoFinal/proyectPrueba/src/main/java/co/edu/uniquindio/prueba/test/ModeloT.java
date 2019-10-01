@@ -741,4 +741,31 @@ public class ModeloT {
 		
 		System.out.println("LISTA DE TODOS LOS DETALLES DE COMPRAS: " + l.toString());
 	}
+	
+	// --------------------------- PRUEBAS CON DETALLESCOMPRAS.JSON ---------------------------
+	//OTRAS PRUEBAS
+	
+	@Test
+	@UsingDataSet({"DetallesCompras.json", "Producto.json", "Compra.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	public void pruebas() {
+		
+		TypedQuery<Compra> q = entityManager.createNamedQuery(Compra.TODOS_PRODUCTOS_COMPRA, Compra.class);
+		q.setParameter("idCompra", 101);
+		List l = q.getResultList();
+		
+		System.out.println("LISTA DE TODAS LAS COMPRAS DE UN PRODUCTO: " + l.toString());
+		
+		TypedQuery<Compra> q1 = entityManager.createNamedQuery(Compra.FECHAS_PRODUCTOS, Compra.class);
+		q1.setParameter("idCompra", 103);
+		List l1 = q1.getResultList();
+		
+		System.out.println(l1.toString());
+		
+		TypedQuery<Compra> q3 = entityManager.createNamedQuery(Compra.LISTADO_COMPRAS, Compra.class);
+		q3.setParameter("fechaCompra", "2019-12-12");
+		List l3 = q3.getResultList();
+		
+		System.out.println("FECHA: " + l3.toString());
+	}
 }

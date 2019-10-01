@@ -14,12 +14,18 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = Compra.TODAS_COMPRAS, query = "select c from Compra c")
+	@NamedQuery(name = Compra.TODAS_COMPRAS, query = "select c from Compra c"),
+	@NamedQuery(name = Compra.TODOS_PRODUCTOS_COMPRA, query = "select d.producto from Compra c inner join c.detallesCompra d where c.idCompra = :idCompra"),
+	@NamedQuery(name = Compra.FECHAS_PRODUCTOS, query = "select c.fechaCompra, d.producto from Compra c inner join c.detallesCompra d where c.idCompra = :idCompra"),
+	@NamedQuery(name = Compra.LISTADO_COMPRAS, query = "select c.idCompra, c.metodoPago, c.producto.usuario.id, c.producto.usuario.email from Compra c inner join c.detallesCompra d where c.fechaCompra = :fechaCompra")
 })
 @Table(name = "Compras")
 public class Compra implements Serializable {
 
 	public static final String TODAS_COMPRAS = "TODAS_COMPRAS";
+	public static final String TODOS_PRODUCTOS_COMPRA = "TODOS_PRODUCTOS_COMPRA";
+	public static final String FECHAS_PRODUCTOS = "FECHAS_PRODUCTOS";
+	public static final String LISTADO_COMPRAS = "LISTADO_COMPRAS";
 	@Id
 	@Column(name = "ID_COMPRA")
 	private int idCompra;
