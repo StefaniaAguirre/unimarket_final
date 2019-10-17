@@ -15,13 +15,17 @@ import javax.persistence.*;
 @Entity
 @NamedQueries({
 	@NamedQuery(name = Producto.TODAS_PRODUCTOS, query = "select p from Producto p"),
-	@NamedQuery(name = Producto.TODOS_PRODUCTOS_DISPONIBLES, query = "select p from Producto p where p.disponibilidad = :disponibilidad")
+	@NamedQuery(name = Producto.TODOS_PRODUCTOS_DISPONIBLES, query = "select p from Producto p where p.disponibilidad = :disponibilidad"),
+	@NamedQuery(name = Producto.PRODUCTO_DISPONIBLES, query = "select p from Producto p where p.disponibilidad > 0 and p.fechaLimite<= :fechaActual" ),
+	@NamedQuery(name = Producto.NUMERO_PRODUCTOS, query = "select new co.edu.uniquindio.persistencia.dto.ConsultaDTOTipoCant(count(p), p.tipoProducto) from Producto p group by p.tipoProducto")
 })
 @Table(name = "Productos")
 public class Producto implements Serializable {
 
 	public static final String TODAS_PRODUCTOS = "TODAS PRODUCTOS";
+	public static final String NUMERO_PRODUCTOS = "NUMERO_PRODUCTOS";
 	public static final String TODOS_PRODUCTOS_DISPONIBLES = "TODOS PRODUCTOS DISPONIBLES";
+	public static final String PRODUCTO_DISPONIBLES= "PRODUCTO_DISPONIBLES";
 	@Id
 	@Column(name = "ID_PRODUCTO")
 	private int idProducto;
@@ -35,8 +39,9 @@ public class Producto implements Serializable {
 	private boolean disponibilidad;
 	@Enumerated(EnumType.STRING)
 	private TipoProducto tipoProducto;
+	@ElementCollection
 	@Column(name = "IMAGEN")
-	private String imagen;
+	private List<String> imagen;
 	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaLimite;
@@ -45,18 +50,23 @@ public class Producto implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 	
+	@ElementCollection
 	@OneToMany(mappedBy = "producto")
 	private List<Compra> misCompras;
 	
+	@ElementCollection
 	@OneToMany(mappedBy = "producto")
 	private List<Calificacion> misCalificaciones;
 	
+	@ElementCollection
 	@OneToMany(mappedBy = "producto")
 	private List<Comentario> misComentarios;
 	
+	@ElementCollection
 	@OneToMany(mappedBy = "producto")
 	private List<Favorito> misFavoritos;
 	
+	@ElementCollection
 	@OneToMany(mappedBy = "producto")
 	private List<DetalleCompra> detallesCompra;
 	
@@ -112,10 +122,10 @@ public class Producto implements Serializable {
 	public void setTipoProducto(TipoProducto tipoProducto) {
 		this.tipoProducto = tipoProducto;
 	}
-	public String getImagen() {
+	public List<String> getImagen() {
 		return imagen;
 	}
-	public void setImagen(String imagen) {
+	public void setImagen(List<String> imagen) {
 		this.imagen = imagen;
 	}
 	public Usuario getUsuario() {

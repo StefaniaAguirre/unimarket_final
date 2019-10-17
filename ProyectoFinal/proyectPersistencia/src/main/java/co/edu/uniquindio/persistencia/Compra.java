@@ -14,12 +14,16 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = Compra.TODAS_COMPRAS, query = "select c from Compra c")
+	@NamedQuery(name = Compra.TODAS_COMPRAS, query = "select c from Compra c"),
+	@NamedQuery(name = Compra.NUMERO_COMPRAS_UNICAS, query = "Select count(c) from Compra c"),
+    @NamedQuery(name = Compra.TODAS_COMPRAS_2, query = "select c.idCompra, c.metodoPago, c.usuario.id, c.usuario.email from Compra c where c.fechaCompra = :fechaCompra")
 })
 @Table(name = "Compras")
 public class Compra implements Serializable {
 
 	public static final String TODAS_COMPRAS = "TODAS_COMPRAS";
+	public static final String TODAS_COMPRAS_2 = "TODAS_COMPRAS_2";
+	public static final String NUMERO_COMPRAS_UNICAS = "NUMERO_COMPRAS_UNICAS";
 	@Id
 	@Column(name = "ID_COMPRA")
 	private int idCompra;
@@ -30,6 +34,9 @@ public class Compra implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private MetodoPago metodoPago;
 	private static final long serialVersionUID = 1L;
+	
+	@ManyToOne
+	private Usuario usuario;
 	
 	@ManyToOne
 	private Producto producto;

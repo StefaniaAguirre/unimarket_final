@@ -1,5 +1,5 @@
 {
-	"detallescompras": [
+	"DetallesCompras": [
 		{
 			"ID_DETALLE_COMPRA": 1,
 			"VALOR_COMPRA": 1200000,

@@ -1,5 +1,7 @@
 package co.edu.uniquindio.prueba.test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +20,7 @@ import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -32,7 +35,7 @@ import co.edu.uniquindio.persistencia.Persona;
 import co.edu.uniquindio.persistencia.Producto;
 import co.edu.uniquindio.persistencia.TipoProducto;
 import co.edu.uniquindio.persistencia.Usuario;
-import junit.framework.Assert;
+import co.edu.uniquindio.persistencia.dto.ConsultaDTOTipoCant;
 
 /**
  * Clase la cual contiene todas las pruebas de cada uno de los .json
@@ -62,8 +65,8 @@ public class ModeloT {
 	public void agregarAdministrador() {
 		
 		Administrador admin = new Administrador();
-		admin.setNombre("Andr�s");
-		admin.setApellido("L�pez");
+		admin.setNombre("Andres");
+		admin.setApellido("Lopez");
 		admin.setDireccion("Isabela");
 		admin.setId("7843");
 		admin.setEmail("andresL@gamil.com");
@@ -211,7 +214,7 @@ public class ModeloT {
 	 */
 	@Test
 	@UsingDataSet({"Persona.json"})
-	@Transactional(value = TransactionMode.ROLLBACK)
+	@Transactional(value = TransactionMode.COMMIT)
 	public void agregarPersona() {
 
 		Persona p = new Persona();
@@ -280,7 +283,7 @@ public class ModeloT {
 	 * M�todo el cual agrega un producto se usa el entityManager.persist() y entityManager.find()
 	 */
 	@Test
-	@UsingDataSet({"Producto.json"})
+	@UsingDataSet({"Producto.json","Persona.json"})
 	@Transactional(value = TransactionMode.ROLLBACK)
 	public void agregarProducto() {
 		
@@ -291,7 +294,7 @@ public class ModeloT {
 		produc.setDescripcion("Portatil");
 		produc.setDisponibilidad(true);
 		produc.setIdProducto(4);
-		produc.setImagen("IMAGEN");
+		
 		produc.setNombre("Computador HP");
 		produc.setPrecio(1500000);
 		produc.setTipoProducto(TipoProducto.TECNOLOGIA);
@@ -335,7 +338,7 @@ public class ModeloT {
 		entityManager.merge(prod);
 		
 		Producto productoRegistrado = entityManager.find(Producto.class, 2);
-		Assert.assertEquals(2000000.0, productoRegistrado.getPrecio());
+		Assert.assertEquals(new Double(2000000.0), new Double(productoRegistrado.getPrecio()));
 	}
 	
 	/**
@@ -741,4 +744,54 @@ public class ModeloT {
 		
 		System.out.println("LISTA DE TODOS LOS DETALLES DE COMPRAS: " + l.toString());
 	}
+	
+//	---------------------------- OTRAS PRUEBAS-----------------------
+	
+	@Test
+	@UsingDataSet({"Compra.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	public void PruebaNumeroCompra()
+	{
+		TypedQuery<Compra> q = entityManager.createNamedQuery(Compra.NUMERO_COMPRAS_UNICAS, Compra.class);
+		List l = q.getResultList();
+		
+		System.out.println("LISTA DE LOS NUMEROS UNICOS DE COMPRA" +  l.toString());
+	}
+	
+	
+	//REVISAR METODO NO FUNCIONA 
+	@Test
+	@UsingDataSet({"Compra.json", "Persona.json", "Producto.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	public void PruebaFechaCompra() {
+      TypedQuery<Object[]> list = entityManager.createNamedQuery(Compra.TODAS_COMPRAS_2, Object[].class);
+		
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+		Date fecha = null;
+		
+		try {
+			fecha = formato.parse("2019-12-12");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	    list.setParameter("fechaCompra", fecha);
+	    
+	    for (Object[] object : list.getResultList()) {
+			System.out.println(object[0]+" "+object[1]+" "+object[2]+" "+object[3]);
+		}
+	}
+	
+	@Test
+	@UsingDataSet({"Producto.json", "Compra.json"})
+	@Transactional(value = TransactionMode.ROLLBACK)
+	public void PruebaNumeroProductos()
+	{
+		TypedQuery<ConsultaDTOTipoCant> q = entityManager.createNamedQuery(Producto.NUMERO_PRODUCTOS, ConsultaDTOTipoCant.class);
+		List<ConsultaDTOTipoCant> l = q.getResultList();
+		System.out.println("\n Número de compras \n");
+		for(ConsultaDTOTipoCant tc: l) {
+			System.out.println("NÚMERO COMPRAS: " + tc.getCantidadProductos() + " " + tc.getTipoProducto());
+		}
+	}
+
 }
