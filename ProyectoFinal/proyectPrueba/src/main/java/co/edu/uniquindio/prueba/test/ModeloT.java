@@ -759,7 +759,7 @@ public class ModeloT {
 	}
 	
 	
-	//REVISAR METODO NO FUNCIONA 
+	//REVISAR METODO FUNCIONA 
 	@Test
 	@UsingDataSet({"Compra.json", "Persona.json", "Producto.json"})
 	@Transactional(value = TransactionMode.ROLLBACK)
