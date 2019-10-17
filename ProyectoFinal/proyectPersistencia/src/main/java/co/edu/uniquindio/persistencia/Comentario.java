@@ -9,11 +9,13 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = Comentario.TODOS_COMENTARIOS, query = "select c from Comentario c")
+	@NamedQuery(name = Comentario.TODOS_COMENTARIOS, query = "select c from Comentario c"),
+	@NamedQuery(name = Comentario.COMENTARIOS_PRODUCTOS, query = "select c from Comentario c where c.producto.idProducto = :codigoProducto")
 })
 @Table(name = "Comentarios")
 public class Comentario implements Serializable {
 
+	public static final String COMENTARIOS_PRODUCTOS = "COMENTARIOS_PRODUCTOS";
 	public static final String TODOS_COMENTARIOS = "TODOS COMENTARIOS";
 	@Id
 	@Column(name = "ID_COMENTARIO")
@@ -25,6 +27,9 @@ public class Comentario implements Serializable {
 	@ManyToOne
 	private Producto producto;
 
+	@ManyToOne
+	private Usuario usuario;
+	
 	public Comentario() {
 		super();
 	}

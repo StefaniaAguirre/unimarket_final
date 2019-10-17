@@ -66,6 +66,10 @@
 		<module>ProyectoPersistencia</module>
 		<module>proyectPersistencia</module>
 		<module>proyectPrueba</module>
+		<module>ProyectoEAR</module>
+		<module>ProyectoNegocio</module>
+		<module>ProyectoSimple</module>
+		<module>ProyectoEscritorio</module>
 	</modules>
 	
 </project>

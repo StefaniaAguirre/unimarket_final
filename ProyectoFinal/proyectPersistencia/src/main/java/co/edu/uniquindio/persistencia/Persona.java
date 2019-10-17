@@ -11,12 +11,15 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQueries({
-	@NamedQuery(name = Persona.TODAS_PERSONAS, query = "select p from Persona p")
+	@NamedQuery(name = Persona.TODAS_PERSONAS, query = "select p from Persona p"),
+	@NamedQuery(name = Persona.VERIFICAR_LOGIN, query = "select p from Persona p where p.email = :email and p.password = :password")
 })
 @Table(name = "Personas")
 public class Persona implements Serializable {
 
+	public static final String  OBTENER_ADMINISTRADOR = "BUSCAR_ADMINISTRADOR";
 	public static final String TODAS_PERSONAS = "TODAS PERSONAS";
+	public static final String VERIFICAR_LOGIN = "VERIFICAR_LOGIN";
 	@Column(name = "NOMBRE", nullable = false)
 	private String nombre;
 	@Column(name = "APELLIDO", nullable = false)
@@ -123,4 +126,7 @@ public class Persona implements Serializable {
 		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", id=" + id
 				+ ", telefono=" + telefono + ", direccion=" + direccion + "]";
 	}
+	
+	
+	
 }

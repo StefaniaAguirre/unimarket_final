@@ -12,13 +12,28 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "Usuarios")
+
+@NamedQueries({ @NamedQuery(name = Usuario.BUSCAR_POR_EMAIL, query = "select u from Usuario u where u.email = :email")
+	            })
+
 public class Usuario extends Persona implements Serializable {
 	
+	
+	public static final String BUSCAR_POR_EMAIL = "BUSCAR_POR_EMAIL";
 	@Enumerated(EnumType.STRING)
 	private Rol rol;
 	
 	@OneToMany(mappedBy = "usuario")
 	private List<Favorito> misFavoritos;
+	
+	@OneToMany(mappedBy = "usuario")
+	private List<Calificacion> misCalificaciones;
+	
+	@OneToMany(mappedBy = "usuario")
+	private List<Comentario> misComentarios;
+	
+	@OneToMany(mappedBy = "usuario")
+	private List<Compra> compras;
 	
 	private static final long serialVersionUID = 1L;
 

@@ -1,5 +1,5 @@
 {
-	"personas": [
+	"Personas": [
 		{
 			"ID": "123",
 			"DTYPE": "Administrador",
@@ -10,8 +10,7 @@
 			"PASSWORD": "123",
 			"TELEFONO": "7376213",
 			"ADMINISTRADOR_ID": "234",
-			"USUARIO_ID": "345",
-			"ROL": "[NULL]"
+			"USUARIO_ID": "345"
 		},
 		{
 			"ID": "213",
